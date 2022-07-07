@@ -47,4 +47,20 @@ RSpec.describe Post, type: :model do
         @post.text = nil
         expect(@post).to be_valid
     end
+
+    it 'five_last_comments' do
+        comment1= Comment.new(author: @user, text: 'body', post: @post)
+        comment1.save
+        comment2= Comment.new(author: @user, text: 'body2', post: @post)    
+        comment2.save
+        comment3= Comment.new(author: @user, text: 'body3', post: @post)
+        comment3.save
+        comment4= Comment.new(author: @user, text: 'body4', post: @post)
+        comment4.save
+        comment5= Comment.new(author: @user, text: 'body5', post: @post)
+        comment5.save   
+        comment6= Comment.new(author: @user, text: 'body6', post: @post)
+        comment6.save
+        expect(@post.five_last_comments).to eq([comment6, comment5, comment4, comment3, comment2])
+    end
 end
