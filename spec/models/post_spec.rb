@@ -48,6 +48,10 @@ RSpec.describe Post, type: :model do
         expect(@post).to be_valid
     end
 
+    it 'has author' do
+        expect(@post.author).to eq(@user)
+    end
+
     it 'five_last_comments' do
         comment1= Comment.new(author: @user, text: 'body', post: @post)
         comment1.save

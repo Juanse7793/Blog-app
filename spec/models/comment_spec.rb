@@ -20,4 +20,12 @@ RSpec.describe Post, type: :model do
         @comment.text = nil
         expect(@comment).to be_valid
     end
+
+    it 'has author' do
+        expect(@comment.author).to eq(@user)
+    end
+
+    it 'has post' do
+        expect(@comment.post).to eq(@post)
+    end
 end
