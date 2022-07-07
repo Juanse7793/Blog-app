@@ -41,4 +41,16 @@ RSpec.describe User, type: :model do
         @user.posts_counter = 0.5
         expect(@user).to_not be_valid
     end
+
+    it 'last 3 posts' do
+        post1= Post.new(author: @user, title: 'Post title', text: 'body', comments_counter: 0, likes_counter: 0)
+        post1.save
+        post2= Post.new(author: @user, title: 'Post title2', text: 'body', comments_counter: 0, likes_counter: 0)    
+        post2.save
+        post3= Post.new(author: @user, title: 'Post title3', text: 'body', comments_counter: 0, likes_counter: 0)
+        post3.save
+        post4= Post.new(author: @user, title: 'Post title4', text: 'body', comments_counter: 0, likes_counter: 0)
+        post4.save
+        expect(@user.last_3_posts).to eq([post4, post3, post2])
+    end
 end
