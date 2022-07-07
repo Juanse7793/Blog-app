@@ -8,6 +8,7 @@ RSpec.describe Post, type: :model do
       @post = Post.new(author: @user, title: 'Post title', text: 'body', comments_counter: 0, likes_counter: 0)
       @post.save
       @comment = Comment.new(author: @user, text: 'comment', post: @post)
+      @comment.save
     end
 
     it 'text always valid' do
