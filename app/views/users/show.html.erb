@@ -14,7 +14,7 @@
 
     <div>
     <% @user.last_3_posts.each do |post| %>
-        <button> <%= post.title %> <%= post.text %> Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></button><br>
+        <li> <%= post.title %> <%= post.text %> Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></li><br>
     <% end %>
     </div>
 </div>

@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    puts params
+    @post = Post.find(params[:id])
+    @user = @post.author
+    @comments = @post.comments
   end
 end
