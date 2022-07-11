@@ -1,2 +1,20 @@
 <h1>User Show page</h1>
 <p> this is the user Show page </p>
+
+<%# details of the User post %>
+
+<div>
+    <%= image_tag @user.photo%>
+    <button><%= @user.name %> Posts: <%= @user.posts_counter%></button>
+</div>
+
+<div>
+    <p>Bio: <%=@user.bio%></p>
+    
+
+
+<div>
+    <%= link_to '/users' do %>
+        <button>Back to User Index</button>
+    <% end %>
+</div>
