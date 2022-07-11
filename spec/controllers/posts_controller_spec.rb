@@ -17,4 +17,21 @@ RSpec.describe 'Post', type: :request do
             expect(response.body).to include('Post Index page')
         end
     end
+
+    describe 'GET /show' do
+        it 'returns http success' do
+            get user_post_path(1, 2)
+            expect(response).to have_http_status(:success)
+        end
+
+        it 'should render show template' do
+            get user_post_path(1, 2)
+            expect(response).to render_template(:show)
+        end
+
+        it 'should render correct text in template' do
+            get user_post_path(1, 2)
+            expect(response.body).to include('Post show page')
+        end
+    end
 end
