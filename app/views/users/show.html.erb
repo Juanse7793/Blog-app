@@ -11,7 +11,6 @@
 <div>
     <p>Bio: <%=@user.bio%></p>
 
-
     <div>
     <% @user.last_3_posts.each do |post| %>
         <li> <%= post.title %> <%= post.text %> Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></li><br>
@@ -25,8 +24,4 @@
     <% end %>
 </div>
 
-<div>
-    <%= link_to '/users' do %>
-        <button>Back to User Index</button>
-    <% end %>
-</div>
+<%= render '/back' %>
