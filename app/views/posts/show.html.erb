@@ -15,10 +15,10 @@
 
 <%# add a form to create a new comment %>
 <div>
-    <%= form_with model: @comment, url: user_post_comments_path(@user, @post) do |f| %>
-        <%= f.label :text %><br>
-        <%= f.text_area :text %><br>
-        <%= f.submit value: "Add Comment" %>
-    <% end %>
+    <%=form_with model: @comment, :url => user_comments_path(@user, @post) do |f|%>
+      <%=f.text_field :text, placeholder: 'Comment'%>
+      <%=f.submit 'Add comment'%>
+    <%end%>
+</div>
 
 <%= render '/back' %>
