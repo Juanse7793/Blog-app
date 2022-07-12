@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
     Like.new(author: current_user, post: @post).save
-    redirect_to user_posts_path(current_user)
+    redirect_to user_post_path(current_user, @post)
   end
 
   def comment

@@ -4,11 +4,11 @@
 
 <%# details of the post %>
 <div>
-    <button><%= @post.title %> <%= @post.text %> Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></button>
+    <button><%= @post.title %> <%= @post.text %> Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></button><br>
     <%# show all comments for this post %>
     <div>
         <% @comments.each do |comment| %>
-            <li> Username: <%=@user.name%>,  <%= comment.text %> </li>
+            <br><li> Username: <%=@user.name%>,  <%= comment.text %> </li><br>
         <% end %>
     </div>
 </div>
@@ -16,9 +16,19 @@
 <%# add a form to create a new comment %>
 <div>
     <%=form_with model: @comment, :url => user_comments_path(@user, @post) do |f|%>
-      <%=f.text_field :text, placeholder: 'Comment'%>
-      <%=f.submit 'Add comment'%>
+      <%=f.text_area :text, placeholder: 'Comment'%><br>
+      <%=f.submit 'Add comment'%> <br>
     <%end%>
 </div>
 
+<%# adding a form for like %>
+<div>
+    <br><%=form_with model: @like, :url => user_likes_path(@user, @post) do |f|%>
+      <%=f.button nil do %>
+        <%= icon('fa-solid', 'thumbs-up', class: 'like')%>
+      <% end %>
+    <%end%>
+</div>
+
+<br>
 <%= render '/back' %>
