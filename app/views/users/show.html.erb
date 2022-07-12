@@ -1,2 +1,27 @@
-<h1>User Show page</h1>
+<h1>2. User Show page</h1>
 <p> this is the user Show page </p>
+
+<%# details of the User post %>
+
+<div>
+    <%= image_tag @user.photo%>
+    <button><%= @user.name %> Posts: <%= @user.posts_counter%></button>
+</div>
+
+<div>
+    <p>Bio: <%=@user.bio%></p>
+
+    <div>
+    <% @user.last_3_posts.each do |post| %>
+        <li> <%= post.title %> <%= post.text %> Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></li><br>
+    <% end %>
+    </div>
+</div>
+
+<div>
+    <%= link_to user_posts_path(@user) do %>
+        <button>See all posts</button>
+    <% end %>
+</div>
+
+<%= render '/back' %>

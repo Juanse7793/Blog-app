@@ -1,2 +1,16 @@
-<h1>Post show page</h1>
+<h1>4. Post show page</h1>
 <p> this is the Post show page </p>
+
+
+<%# details of the post %>
+<div>
+    <button><%= @post.title %> <%= @post.text %> Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></button>
+    <%# show all comments for this post %>
+    <div>
+        <% @comments.each do |comment| %>
+            <li> Username: <%=@user.name%>,  <%= comment.text %> </li>
+        <% end %>
+    </div>
+</div>
+
+<%= render '/back' %>
