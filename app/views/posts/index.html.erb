@@ -16,4 +16,15 @@
     <% end %>
 </div>
 
+<%# create a form to add a Post %>
+<div>
+    <%= form_with model: @post, url: user_posts_path(@user) do |f| %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %><br>
+      <%= f.label :text %><br>
+      <%= f.text_area :text %><br>
+      <%= f.submit %>
+    <% end %>
+</div>
+
 <%= render '/back' %>
