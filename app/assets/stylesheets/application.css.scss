@@ -14,4 +14,25 @@
  *= require_self
  */
 
-@import "font-awesome";
+@import 'font-awesome';
+
+.abtns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+  width: 120px;
+  height: 60px;
+  background-color: rgb(83, 154, 230);
+  border-radius: 15px;
+  border: none;
+}
+
+.btn-text {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
