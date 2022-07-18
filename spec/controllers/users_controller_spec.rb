@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User', type: :request do
+  User.create(name: 'John', photo: '', bio: '')
   describe 'GET /index' do
     it 'returns http success' do
       get users_path
@@ -20,17 +21,17 @@ RSpec.describe 'User', type: :request do
 
   describe 'GET /show' do
     it 'returns http success' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response).to have_http_status(:success)
     end
 
     it 'should render show template' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response).to render_template(:show)
     end
 
     it 'should render correct text in template' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response.body).to include('User Show page')
     end
   end
