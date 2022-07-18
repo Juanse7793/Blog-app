@@ -2,7 +2,7 @@
 <p> this is the Post show page </p>
 <%# details of the post %>
 <div>
-  <button><%= @post.title %> <%= @post.text %> Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></button><br>
+  <button><%= @post.title %> By <%=@user.name%> <%= @post.text %> Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></button><br>
   <%# show all comments for this post %>
   <div>
     <% @post.comments.each do |comment| %>
