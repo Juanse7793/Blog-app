@@ -4,7 +4,7 @@
   <div>
     <%= image_tag user.photo%>
     <%= link_to user_path(user.id) do %>
-        <button><%= user.name %> Posts: <%= user.posts_counter%></button>
+      <button><%= user.name %> Posts: <%= user.posts_counter%></button>
     <% end %>
   </div>
 <% end %>
