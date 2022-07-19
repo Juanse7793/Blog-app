@@ -21,6 +21,6 @@ class User < ApplicationRecord
   end
 
   def default_photo
-    self.photo ||= 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
+    self.photo ||= 'https://i.stack.imgur.com/YQu5k.png'
   end
 end
