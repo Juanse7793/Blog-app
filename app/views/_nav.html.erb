@@ -1,6 +1,6 @@
 <%# render 2 buttons home and create %>
 
-<div>
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Create Post', new_post_path %>
+<div class="abtns">
+    <button class="btn"><%= link_to 'Home', root_path, class: "btn-text" %></button>
+    <button class="btn"><%= link_to 'Create Post', new_post_path, class: "btn-text" %></button>
 </div>
