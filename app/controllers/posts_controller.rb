@@ -4,8 +4,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments).find(params[:id])
-    @user = current_user
+    @post = Post.includes(comments: [:author]).find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def new
